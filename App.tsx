@@ -106,15 +106,10 @@ function HymnModal({ hymn, onClose }: { hymn: Hymn; onClose: () => void }) {
 /* ─── APP ─── */
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [visible, setVisible] = useState(false);
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [selected, setSelected] = useState<Hymn | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!loading) setTimeout(() => setVisible(true), 50);
-  }, [loading]);
 
   // Focus l'input quand la barre s'ouvre
   useEffect(() => {
@@ -139,7 +134,7 @@ export default function App() {
   if (loading) return <Preloader onDone={() => setLoading(false)} />;
 
   return (
-    <div className={`app ${visible ? "app--in" : ""}`}>
+    <div className="app">
 
       {/* ── TOPBAR ── */}
       <header className="topbar">
