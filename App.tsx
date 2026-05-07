@@ -48,7 +48,7 @@ export default function App() {
         {filtered.length === 0 ? (
           <div className="empty">
             <div className="empty__icon">♪</div>
-            <p>Aucun cantique trouvé pour "{search}"</p>
+            <p> Aucun cantique trouvé pour "{search}"</p>
           </div>
         ) : (
           <div className="grid">
