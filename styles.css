@@ -452,12 +452,9 @@ body {
 }
 
 .download-card {
-  background: white;
   border-radius: 32px;
   padding: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   text-align: center;
-  border: 1px solid var(--border);
 }
 
 .app-icon {
@@ -560,7 +557,7 @@ body {
 .back-link a {
   color: var(--text3);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 2rem;
   font-weight: 600;
   transition: color 0.2s;
 }

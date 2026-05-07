@@ -13,12 +13,12 @@ const Download: React.FC = () => {
           <p className="description">
             Téléchargez l'application officielle pour accéder à tous vos cantiques préférés même hors ligne.
           </p>
-          
+
           <a href="/apk/cantique.apk" download className="download-button">
             <span className="icon">⬇</span>
             Télécharger l'APK
           </a>
-          
+
           <div className="instructions">
             <h3>Comment installer ?</h3>
             <ul>
@@ -29,9 +29,9 @@ const Download: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="back-link">
-          <a href="/">Retour à l'accueil</a>
+          <a href="/">{'<'}</a>
         </div>
       </div>
     </div>
