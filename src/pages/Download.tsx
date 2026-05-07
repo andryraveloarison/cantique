@@ -15,7 +15,6 @@ const Download: React.FC = () => {
           </p>
 
           <a href="/apk/cantique.apk" download className="download-button">
-            <span className="icon">⬇</span>
             Télécharger l'APK
           </a>
 
