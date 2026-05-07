@@ -24,4 +24,9 @@ jobs:
           name: Cantiques FFPM
           # On demande spécifiquement le build Android
           platform: android
-          # Vous pourrez télécharger l'APK dans les artefacts
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: ./*android*.apk
