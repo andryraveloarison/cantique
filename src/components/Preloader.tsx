@@ -19,11 +19,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
 
       <div className="preloader__content">
         <div className="cross-wrap">
-          <svg viewBox="0 0 80 100" className="cross-svg" fill="none">
-            <rect className="cross-v" x="27" y="0" width="26" height="100" rx="4" fill="var(--green)" />
-            <rect className="cross-h" x="0" y="22" width="80" height="26" rx="4" fill="var(--green2)" />
-          </svg>
-
+          <img src="/logo2.png" alt="Logo" className="preloader__logo" />
         </div>
 
         <div className={`preloader__title ${phase !== "cross" ? "preloader__title--show" : ""}`}>

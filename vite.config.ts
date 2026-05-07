@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["logo.png", "favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
+      includeAssets: ["logo2.png", "favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
       manifest: {
         name: "Cantiques FFPM",
         short_name: "Cantique",
@@ -15,17 +15,17 @@ export default defineConfig({
         theme_color: "#009b1a",
         icons: [
           {
-            src: "logo.png",
+            src: "logo2.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "logo.png",
+            src: "logo2.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "logo.png",
+            src: "logo2.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable",
