@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cantiques FFPM</string>
+    <string name="title_activity_main">Cantiques FFPM</string>
+    <string name="package_name">com.andry.cantique</string>
+    <string name="custom_url_scheme">com.andry.cantique</string>
+</resources>
