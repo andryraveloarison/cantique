@@ -64,20 +64,20 @@ export default function App() {
           </div>
         )}
       </main>
-      
+
       {/* ── BOTTOM SEARCH ── */}
       <div className="bottom-bar">
         <div className="search-wrap">
           <input
             ref={inputRef}
             className="search"
-            placeholder="Search..."
+            placeholder="Rechercher..."
             value={search}
             onChange={e => setSearch(e.target.value)}
             autoComplete="off"
             spellCheck={false}
           />
-          <span className="search-icon">🔍</span>
+          <img src="/logo2.png" alt="Search" className="search-icon-img" />
           {search && (
             <button className="search-clear" onClick={() => setSearch("")}>✕</button>
           )}

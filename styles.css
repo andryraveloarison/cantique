@@ -12,7 +12,7 @@
   --bg: #f5f0e8;
   --bg2: #ede7d8;
   --bg3: #e4dcca;
-  --green: #4a8c3f;
+  --green: #009b1a;
   --green2: #3d7a34;
   --green-light: #7ab86e;
   --green-pale: #d6eacf;
@@ -84,25 +84,28 @@ body {
   height: 100px;
 }
 
-.cross-svg {
+.preloader__logo {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  animation: logoPulse 2s infinite ease-in-out;
 }
 
-.cross-v {
-  transform-origin: top;
-  animation: drawV 0.6s ease forwards;
+@keyframes logoPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
 }
 
-.cross-h {
-  transform-origin: left;
-  animation: drawH 0.5s 0.3s ease forwards;
-}
-
-@keyframes drawV { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-@keyframes drawH { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-
-/* ───────── APP ───────── */
+/* App */
 .app {
   min-height: 100vh;
   opacity: 0;
@@ -117,7 +120,8 @@ body {
 .main {
   max-width: 600px;
   margin: 0 auto;
-  padding: 40px 20px 140px; /* Space for bottom bar */
+  padding: 40px 20px 140px;
+  /* Space for bottom bar */
 }
 
 /* ───────── BOTTOM BAR ───────── */
@@ -126,13 +130,14 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 16px 20px 32px;
+  padding: 22px 14px 13px;
   background: white;
   border-top: 1px solid #eee;
   z-index: 10000;
   display: flex;
   justify-content: center;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 20px 20px 0 0;
 }
 
 .search-wrap {
@@ -143,7 +148,7 @@ body {
 
 .search {
   width: 100%;
-  padding: 14px 16px 14px 46px;
+  padding: 14px 16px 14px 55px;
   border: 1px solid #ddd;
   border-radius: 14px;
   background: #f9f9f9;
@@ -160,13 +165,15 @@ body {
   box-shadow: 0 0 0 4px rgba(184, 180, 212, 0.15);
 }
 
-.search-icon {
+.search-icon-img {
   position: absolute;
-  left: 16px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.1rem;
-  opacity: 0.4;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  opacity: 0.8;
   pointer-events: none;
 }
 
@@ -195,7 +202,12 @@ body {
   animation: cardIn 0.5s ease forwards;
 }
 
-@keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ───────── HYMN CARD ───────── */
 .hymn-card {
@@ -204,26 +216,26 @@ body {
   width: 100%;
   min-height: 120px;
   background: white;
-  border: 1px solid #eee;
+  border: 1px solid #050505;
   border-radius: 28px;
   cursor: pointer;
   text-align: left;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   padding: 12px;
   overflow: hidden;
 }
 
 .hymn-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border-color: var(--lavender2);
 }
 
 .hymn-card__left {
   flex: 0 0 95px;
   height: 95px;
-  background: #f0f0fa;
+  background: #009b1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,7 +247,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #c8c8e6;
+  color: #000000;
   font-style: italic;
 }
 
@@ -255,7 +267,7 @@ body {
 
 .hymn-card__title {
   font-family: 'Crimson Pro', serif;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text);
   line-height: 1.2;
@@ -300,11 +312,21 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
   animation: modalUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes modalUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes modalUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .modal__close {
   position: sticky;
@@ -330,10 +352,11 @@ body {
 
 .modal__number {
   font-family: 'Cinzel', serif;
-  font-size: 0.8rem;
-  color: var(--lavender2);
+  font-size: 1.8rem;
+  color: var(--green);
   margin-bottom: 8px;
   letter-spacing: 0.1em;
+  font-weight: 800;
 }
 
 .modal__title {
@@ -357,7 +380,7 @@ body {
 .verse__num {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  color: var(--lavender2);
+  color: var(--text);
   font-size: 1rem;
 }
 
@@ -396,10 +419,19 @@ body {
   padding: 100px 20px;
 }
 
-.empty__icon { font-size: 4rem; margin-bottom: 16px; opacity: 0.2; }
+.empty__icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  opacity: 0.2;
+}
 
 /* ───────── RESPONSIVE ───────── */
 @media (max-width: 600px) {
-  .modal { max-height: 95vh; }
-  .main { padding-top: 20px; }
+  .modal {
+    max-height: 95vh;
+  }
+
+  .main {
+    padding-top: 20px;
+  }
 }

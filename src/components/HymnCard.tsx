@@ -9,10 +9,8 @@ export default function HymnCard({ hymn, onClick }: { hymn: Hymn; onClick: () =>
         <span className="hymn-card__num-big">{hymn.number.split(' ').pop()}</span>
       </div>
       <div className="hymn-card__right">
-        <div className="hymn-card__category">{hymn.category || "Cantique"}</div>
         <h3 className="hymn-card__title">{hymn.title}</h3>
         <p className="hymn-card__preview">{firstLine}…</p>
-        <div className="hymn-card__count">{hymn.verses.length} str.</div>
       </div>
     </button>
   );
